@@ -1,0 +1,42 @@
+version: '3'
+
+volumes:
+  postgres-data:
+    driver: local
+
+services:
+  api:
+    build:
+      context: ./
+    container_name: email-sender-api
+    env_file:
+      - ./.env
+    volumes:
+       - ./:/app
+    ports:
+      - '8000:8000'
+  pgsql:
+    image: postgres
+    container_name: email-sender-db
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    env_file: 
+      ./.env
+    environment:
+       PGDATA: /var/lib/postgresql/data/pgdata
+       POSTGRES_DB: ${TYPEORM_DATABASE}
+       POSTGRES_USER: ${TYPEORM_USERNAME}
+       POSTGRES_PASSWORD: ${TYPEORM_PASSWORD}
+    ports:
+      - 5434:5432
+    restart: on-failure
+  redis:
+    image: redis:alpine
+    container_name: email-sender-redis
+    ports:
+      - 6379:6379
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3

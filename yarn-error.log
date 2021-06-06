@@ -1,0 +1,42 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add bull @types/bull bull-board @types/bull-board morgan @types/morgan node-cron @types/node-cron yarn-run-all @types/yarn-run-all express @types/express pg reflect-metadata typeorm typescript
+
+PATH: 
+  /home/geovany/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:ANDROID_HOME/tools:/opt/gradle/gradle-5.6/bin:/home/geovany/Android/Sdk/emulator:/home/geovany/snap/flutter/common/flutter/bin:/home/geovany/Android/Sdk/tools:/home/geovany/Android/Sdk/tools/bin:/home/geovany/Android/Sdk/platform-tools:ANDROID_HOME/tools:/opt/gradle/gradle-5.6/bin:/home/geovany/Android/Sdk/emulator:/home/geovany/snap/flutter/common/flutter/bin:/home/geovany/Android/Sdk/tools:/home/geovany/Android/Sdk/tools/bin:/home/geovany/Android/Sdk/platform-tools
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  12.22.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@types%2fyarn-run-all: Not found
+      at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66988:18)
+      at Request.self.callback (/usr/share/yarn/lib/cli.js:140749:22)
+      at Request.emit (events.js:314:20)
+      at Request.<anonymous> (/usr/share/yarn/lib/cli.js:141721:10)
+      at Request.emit (events.js:314:20)
+      at IncomingMessage.<anonymous> (/usr/share/yarn/lib/cli.js:141643:12)
+      at Object.onceWrapper (events.js:420:28)
+      at IncomingMessage.emit (events.js:326:22)
+      at endReadableNT (_stream_readable.js:1241:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+
+npm manifest: 
+  {
+    "name": "email-sender",
+    "version": "1.0.0",
+    "description": "Application using node, redis and postgres to send emails.",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

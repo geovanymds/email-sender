@@ -1,0 +1,34 @@
+{
+  "name": "email-sender",
+  "version": "1.0.0",
+  "description": "Application using node, redis and postgres to send emails.",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npm-run-all -p dev:*",
+    "dev:api": "ts-node-dev src/index.ts --respawn --transpileOnly",
+    "dev:queue": "ts-node-dev src/queue.ts --respawn --transpileOnly",
+    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js"
+  },
+  "dependencies": {
+    "@types/bull": "^3.15.1",
+    "@types/bull-board": "^0.6.0",
+    "@types/express": "^4.17.12",
+    "@types/mailgen": "^2.0.4",
+    "@types/morgan": "^1.9.2",
+    "@types/node-cron": "^2.0.3",
+    "@types/nodemailer": "^6.4.2",
+    "bull": "^3.22.7",
+    "bull-board": "^2.1.2",
+    "express": "^4.17.1",
+    "mailgen": "^2.0.14",
+    "node-cron": "^3.0.0",
+    "nodemailer": "^6.6.1",
+    "pg": "^8.6.0",
+    "reflect-metadata": "^0.1.13",
+    "ts-node-dev": "^1.1.6",
+    "typeorm": "^0.2.34",
+    "typescript": "^4.3.2",
+    "yarn-run-all": "^3.1.1"
+  }
+}
